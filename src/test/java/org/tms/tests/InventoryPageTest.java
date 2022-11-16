@@ -1,5 +1,6 @@
 package org.tms.tests;
 
+import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.tms.model.User;
@@ -8,6 +9,7 @@ import org.tms.services.LoginPageService;
 
 public class InventoryPageTest extends BaseTest{
 
+   @Step("Add product to Cart")
    @Test
     public void addToCartProductTest(){
 
