@@ -9,7 +9,6 @@ import org.tms.services.LoginPageService;
 
 public class LoginPageTest extends BaseTest {
 
-    @Step("Login SauceDemo")
     @Test
     public void loginTest(){
        LoginPageService setLoginPageService = new LoginPageService();

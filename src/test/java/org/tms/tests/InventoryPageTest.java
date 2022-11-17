@@ -9,7 +9,6 @@ import org.tms.services.LoginPageService;
 
 public class InventoryPageTest extends BaseTest{
 
-   @Step("Add product to Cart")
    @Test
     public void addToCartProductTest(){
 
@@ -20,7 +19,7 @@ public class InventoryPageTest extends BaseTest{
        setLoginPageService.login(user);
 
        String actualNameOfProductInCart = addProductToCart.addProduct().getNameOfProductInCart();
-       String expectedNameOfProductInCart = "Sauce Labs Backpack";
+       String expectedNameOfProductInCart = "Sauce Labs";
        Assert.assertEquals(actualNameOfProductInCart, expectedNameOfProductInCart, "Product was added to Cart");
     }
 }

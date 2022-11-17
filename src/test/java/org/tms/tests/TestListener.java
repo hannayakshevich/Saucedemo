@@ -23,10 +23,11 @@ public class TestListener implements ITestListener {
                 getExecutionTime(iTestResult)));
     }
 
+    @Override
     public void onTestFailure(ITestResult iTestResult) {
         System.out.println(String.format("======================================== FAILED TEST %s Duration: %ss ========================================", iTestResult.getName(),
                 getExecutionTime(iTestResult)));
-        takeScreenshot(iTestResult);
+        takeScreenshot();
     }
 
     public void onTestSkipped(ITestResult iTestResult) {
@@ -34,7 +35,7 @@ public class TestListener implements ITestListener {
     }
 
     @Attachment(value = "screenshot", type = "image/png")
-    public static byte[] takeScreenshot(ITestResult iTestResult) {
+    public byte[] takeScreenshot() {
         return ((TakesScreenshot) DriverSingleton.getDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
